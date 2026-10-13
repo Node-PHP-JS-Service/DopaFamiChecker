@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+}
+th {
+    color: #00032b;
+    border: #00032b solid 1px;
+}
+td {
+    border: solid 1px;
+}
+input[name="Base64"] {
+    width: 500px;
+}
+canvas
+{
+    width: 480px;
+    height: 360px;
+    border: 1px solid #000;
+}

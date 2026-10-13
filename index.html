@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ドパファミチェッカー（ホーム）</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="favicon.png">
+    </head>
+    <body>
+        <h1>ドパファミチェッカー（ホーム）</h1>
+        <p>家族がスマホに夢中で、時間を奪われないようにします!</p>
+        <p>...ところで、［ドパガキ］という言葉を知っていますか?意味は、ドーパミン中毒のガキという意味です。</p>
+        <p>ドパファミも似たような意味です。ドーパミン中毒のファミリー（家族）という意味です。</p>
+        <p>ドパガキの特徴：</p>
+        <ul>
+            <li>飽きっぽい</li>
+            <li>スマホ依存症</li>
+            <li>ショートスリーパーになりがち</li>
+            <li>単純なことですぐ笑う</li>
+            <li>ショート動画の平均スクロール時間が15秒（広告含む）</li>
+            <li>SNS依存でもある</li>
+            <li>基本的に子どもがなりやすいが、最近は大人もなりやすい</li>
+        </ul>
+        <p>ドパファミ度をチェックし、それに合わせてケアをしていきます!</p>
+        <p>あ、ちなみに家族だけでなくグループのみんなでもOKです</p>
+        <p>ちなみに質問やレベルはYutaの完全なる偏見ですので、信頼しすぎないように!</p>
+        <h2>家族の追加</h2>
+        <form id="addfamily">
+            <label>家族名:<input type="text" placeholder="家族の名前（ニックネームでも可）" name="familyname"></label>
+            <button type="submit">追加</button>
+        </form>
+        <h2>家族一覧</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>レベル</th>
+                    <th>スコア</th>
+                    <th>削除ボタン</th>
+                    <th>名前編集ボタン</th>
+                </tr>
+            </thead>
+            <tbody id="families">
+                
+            </tbody>
+        </table>
+        <h3>スコアとは</h3>
+        <p>スコアとは、0~100の数値のことです。0に近づくほどドパファミで、100に近づくほど正常です。</p>
+        <p>レベルとは、スコアに1.2をかけた数からだいたいの状態を表示します。</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>レベル名</th>
+                    <th>スコアの範囲</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>大丈夫</td>
+                    <td>100~83.33</td>
+                </tr>
+                <tr>
+                    <td>基本大丈夫</td>
+                    <td>83.33~66.67</td>
+                </tr>
+                <tr>
+                    <td>ほんの少し中毒</td>
+                    <td>66.67~50</td>
+                </tr>
+                <tr>
+                    <td>軽度のドーパミン中毒</td>
+                    <td>50~33.33</td>
+                </tr>
+                <tr>
+                    <td>中程度のドーパミン中毒</td>
+                    <td>33.33~16.67</td>
+                </tr>
+                <tr>
+                    <td>重度のドーパミン中毒</td>
+                    <td>16.67~0</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>フォーム</h2>
+        <p><a href="form.html" target="_blank">このフォーム</a>を家族に協力してもらい家族にやってもらいましょう!</p>
+        <h2>追加欄</h2>
+        <form id="Add">
+            <label>記入者: <select name="Inputer"></select></label>
+            <label>フォームの文字列: <input type="text" name="Base64"></label>
+            <button type="submit">追加</button>
+        </form>
+        <h2>QRコードで追加欄に書き込む</h2>
+        <input type="file" id="QRfile" accept=".png, .jpeg, .jpg, .webp, .svg, .bmp">
+        <button id="fileread">ファイルで読む</button>
+        <button id="cameraread">カメラで読む</button><br>
+        <video id="cameravideo" autoplay playsinline hidden></video>
+        <canvas id="cameraimage"></canvas>
+        <h2>統計</h2>
+        <p id="heikinScore">平均スコア：</p>
+        <p id="heikinlevel">平均レベル：</p>
+        <p id="highscore">ハイスコアの人：</p>
+        <p id="lowscore">最も低いスコアの人：</p>
+        <h2>データのバックアップ</h2>
+        <button id="BackupFileExport">バックアップファイルのエクスポート</button>
+        <button id="BackupFileImport">バックアップファイルのインポート</button><br>
+        <button id="BackupTextMake">バックアップテキストの作成</button><br>
+        <output id="BackupText"></output><br>
+        <input id="BackupTextInput" type="text">
+        <button id="BackupTextLoad">バックアップテキストを読む</button>
+        <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
